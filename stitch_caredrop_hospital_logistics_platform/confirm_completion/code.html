@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Task Completed - CareDrop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-on-surface": "#313030",
+                      "background": "#131313",
+                      "surface": "#131313",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#a2eeff",
+                      "secondary": "#5de6ff",
+                      "surface-tint": "#f5bd60",
+                      "surface-dim": "#131313",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "on-background": "#e5e2e1",
+                      "surface-container": "#201f1f",
+                      "secondary-container": "#00cbe6",
+                      "tertiary": "#51e0a5",
+                      "primary-fixed": "#ffdead",
+                      "primary": "#f7bf62",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#353534",
+                      "on-primary": "#432c00",
+                      "on-surface-variant": "#d3c4b1",
+                      "on-secondary": "#00363e",
+                      "outline": "#9c8f7e",
+                      "on-primary-fixed": "#281900",
+                      "inverse-primary": "#7f5700",
+                      "on-tertiary-container": "#004b32",
+                      "on-secondary-container": "#00515d",
+                      "error": "#ffb4ab",
+                      "on-primary-container": "#583b00",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-bright": "#393939",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-secondary-fixed": "#001f25",
+                      "on-error": "#690005",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "outline-variant": "#4f4537",
+                      "on-tertiary-fixed": "#002113",
+                      "surface-container-high": "#2a2a2a",
+                      "tertiary-container": "#29c48b",
+                      "on-surface": "#e5e2e1",
+                      "primary-container": "#d9a44a",
+                      "on-tertiary": "#003824",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-container-highest": "#353534",
+                      "primary-fixed-dim": "#f5bd60",
+                      "on-primary-fixed-variant": "#604100",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .glow-pulse {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: .7;
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Main Content Canvas - Hidden Nav Shell for Transactional State -->
+<main class="w-full max-w-2xl flex flex-col gap-8 relative z-10">
+<!-- Status Header -->
+<div class="flex flex-col items-center text-center gap-4">
+<div class="relative w-24 h-24 flex items-center justify-center rounded-full bg-surface-container-high border border-surface-variant shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+<!-- Glowing indicator ring -->
+<div class="absolute inset-0 rounded-full border-2 border-primary-container opacity-50 glow-pulse"></div>
+<span class="material-symbols-outlined text-primary-container" style="font-size: 48px; font-variation-settings: 'FILL' 1;">
+                    check_circle
+                </span>
+</div>
+<div class="space-y-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Task Completed</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto">
+                    Marcus Lee has marked the task as completed. Please review and confirm.
+                </p>
+</div>
+</div>
+<!-- Task Summary Card - Glassmorphism/Bento style -->
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl shadow-[0_16px_32px_-12px_rgba(0,0,0,0.5)] overflow-hidden">
+<div class="p-6 border-b border-[#2C2C2C]">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">assignment</span>
+                    Task Summary
+                </h2>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Details -->
+<div class="space-y-4">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">TASK ID</p>
+<p class="font-body-lg text-body-lg text-on-surface">#CD-8842</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">TYPE</p>
+<p class="font-body-lg text-body-lg text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 16px;">medication</span>
+                            Equipment Transport
+                        </p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">ORIGIN &amp; DESTINATION</p>
+<p class="font-body-lg text-body-lg text-on-surface">Central Supply → ICU Ward 4</p>
+</div>
+</div>
+<!-- Timing & Personnel -->
+<div class="space-y-4 bg-surface-container rounded-lg p-4 border border-surface-variant">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">COMPLETED BY</p>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a male hospital logistics worker wearing dark scrubs. He looks professional and calm. The lighting is soft and cinematic, set against a blurred hospital corridor background. Dark corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_8mi5o0MgSmw1LFfjozrzCrk-5rvLvlwbhy3pQD7371-rfosudoilYRhDxPCH9uN0WCYeMSdeAFTHrKeUt_jlsGR-h1zYV1lx4iDMsnb2sWdOSg7lJFa-i9obe34WbBEjZ8UNLRvXr9nr9lYxvnudVUX18hajO_nyB-6ptgRwtL_1855hLu05bAUW11RZIzodhLFSpvCoyoqe9Y3vk67Gcgvg-39sEPlES-v4Os_nDIU73huWP0_n"/>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface">Marcus Lee</p>
+</div>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">TIME COMPLETED</p>
+<p class="font-body-lg text-body-lg text-on-surface">14:22 PM (3 mins ago)</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="flex-1 h-12 bg-primary-container text-on-primary font-title-md text-title-md rounded-lg shadow-sm hover:brightness-110 active:scale-95 transition-all duration-200 relative overflow-hidden flex items-center justify-center gap-2">
+<!-- Glint effect -->
+<div class="absolute top-0 left-0 right-0 h-[1px] bg-white opacity-20"></div>
+<span class="material-symbols-outlined" style="font-size: 20px; font-variation-settings: 'FILL' 1;">thumb_up</span>
+                Confirm Completion
+            </button>
+<button class="flex-1 h-12 bg-transparent border-2 border-error text-error font-title-md text-title-md rounded-lg hover:bg-error/10 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 20px;">report_problem</span>
+                Report an Issue
+            </button>
+</div>
+</main>
+</body></html>

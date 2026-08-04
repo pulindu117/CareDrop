@@ -1,0 +1,171 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CareDrop - Splash Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#003824",
+                        "outline": "#9c8f7e",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#00cbe6",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#604100",
+                        "on-primary-fixed": "#281900",
+                        "on-surface-variant": "#d3c4b1",
+                        "primary-container": "#d9a44a",
+                        "secondary": "#5de6ff",
+                        "on-secondary-container": "#00515d",
+                        "tertiary-container": "#29c48b",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#f5bd60",
+                        "error": "#ffb4ab",
+                        "on-error": "#690005",
+                        "on-primary": "#432c00",
+                        "surface-tint": "#f5bd60",
+                        "primary": "#f7bf62",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface-bright": "#393939",
+                        "on-tertiary-container": "#004b32",
+                        "surface-variant": "#353534",
+                        "on-secondary": "#00363e",
+                        "outline-variant": "#4f4537",
+                        "on-secondary-fixed": "#001f25",
+                        "primary-fixed": "#ffdead",
+                        "surface": "#131313",
+                        "on-tertiary-fixed": "#002113",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "secondary-fixed": "#a2eeff",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#7f5700",
+                        "on-primary-container": "#583b00",
+                        "tertiary-fixed": "#6ffbbe",
+                        "tertiary": "#51e0a5",
+                        "on-background": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pulse-loader {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .5; transform: scale(0.95); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen w-screen overflow-hidden flex flex-col items-center justify-center relative antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Ambient Background Glow -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
+<div class="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] rounded-full bg-primary-container opacity-[0.03] blur-[100px] absolute mix-blend-screen pulse-loader"></div>
+</div>
+<!-- Main Content Container -->
+<main class="z-10 flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto h-full relative">
+<!-- Logo Element -->
+<div class="fade-in-up mb-8 relative flex items-center justify-center">
+<!-- Stylized Drop/Care Icon -->
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-surface-container flex items-center justify-center border border-outline-variant shadow-[0_8px_32px_rgba(0,0,0,0.4)] relative overflow-hidden group">
+<!-- Subtle top glint -->
+<div class="absolute top-0 left-0 right-0 h-px bg-white/10"></div>
+<span class="material-symbols-outlined text-6xl md:text-7xl text-primary-container drop-shadow-md transition-transform duration-500 group-hover:scale-110" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">
+                    water_drop
+                 </span>
+<!-- Inner core accent -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-3xl md:text-4xl text-on-surface opacity-80" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">
+                        favorite
+                     </span>
+</div>
+</div>
+</div>
+<!-- Brand Typography -->
+<div class="text-center fade-in-up delay-100 flex flex-col items-center space-y-4">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">CareDrop</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto leading-relaxed">
+                Hospital logistics, handled with care.
+            </p>
+</div>
+<!-- Loading Indicator -->
+<div class="absolute bottom-16 md:bottom-24 left-0 right-0 flex justify-center items-center fade-in-up delay-300">
+<div class="flex items-center space-x-2 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-[pulse_1s_infinite]"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-[pulse_1s_infinite_200ms]"></span>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-[pulse_1s_infinite_400ms]"></span>
+<span class="font-label-md text-label-md text-on-surface-variant ml-2 uppercase tracking-wider">Initializing</span>
+</div>
+</div>
+</main>
+<!-- Optional: Simulated redirection logic for presentation purposes -->
+<script>
+        // Simulate loading time before theoretically redirecting to dashboard
+        setTimeout(() => {
+            console.log('App initialized, ready to proceed to main interface.');
+            // window.location.href = '/dashboard';
+        }, 3000);
+    </script>
+</body></html>

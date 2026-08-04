@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track Request - CareDrop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#313030",
+                    "background": "#131313",
+                    "surface": "#131313",
+                    "error-container": "#93000a",
+                    "secondary-fixed": "#a2eeff",
+                    "secondary": "#5de6ff",
+                    "surface-tint": "#f5bd60",
+                    "surface-dim": "#131313",
+                    "on-secondary-fixed-variant": "#004e5a",
+                    "on-background": "#e5e2e1",
+                    "surface-container": "#201f1f",
+                    "secondary-container": "#00cbe6",
+                    "tertiary": "#51e0a5",
+                    "primary-fixed": "#ffdead",
+                    "primary": "#f7bf62",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#353534",
+                    "on-primary": "#432c00",
+                    "on-surface-variant": "#d3c4b1",
+                    "on-secondary": "#00363e",
+                    "outline": "#9c8f7e",
+                    "on-primary-fixed": "#281900",
+                    "inverse-primary": "#7f5700",
+                    "on-tertiary-container": "#004b32",
+                    "on-secondary-container": "#00515d",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#583b00",
+                    "secondary-fixed-dim": "#2fd9f4",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-bright": "#393939",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-secondary-fixed": "#001f25",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "outline-variant": "#4f4537",
+                    "on-tertiary-fixed": "#002113",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-container": "#29c48b",
+                    "on-surface": "#e5e2e1",
+                    "primary-container": "#d9a44a",
+                    "on-tertiary": "#003824",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface-container-highest": "#353534",
+                    "primary-fixed-dim": "#f5bd60",
+                    "on-primary-fixed-variant": "#604100",
+                    "surface-container-lowest": "#0e0e0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glow-pulse {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px #22D3EE; }
+            50% { opacity: .5; box-shadow: 0 0 2px #22D3EE; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface w-full top-0 sticky shadow-sm z-40 transition-colors duration-200">
+<div class="flex items-center justify-between px-margin-mobile w-full h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a sleek, dark metallic user avatar placeholder icon against a deep charcoal background with subtle warm gold rim lighting. Professional, clinical, yet warm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAeNUWlC2Wj1VSAi_bHZY2ybKUk8IiNp_bMQU8YO9RMGSYx_CI2s0v7P9fdW5BzwT0Q7mk5LqZNqWzHEGt9Qw0MW4t-Bgj1vEGpfXRdxt61LqtA2glPdCqCqFgzc-F7vUaron_zYd1xS1sGFYwo4fgGiXmkDLmS_PZPL8XCsnMzrBDjDDj2YNOffF46ueO0vSSAhXlVzL-Od0fFvocZZUPVPVtzI0tc9Aoel-vyePFppqx1tbuLSNx"/>
+</div>
+</div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary tracking-tight font-extrabold">CareDrop</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container dark:hover:bg-surface-container text-primary dark:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6">
+<!-- Header Section -->
+<div class="flex justify-between items-start mb-8">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-1">Track Delivery</h1>
+<p class="text-on-surface-variant font-body-md">Req #8924-Med</p>
+</div>
+<div class="bg-primary-container/20 border border-primary-container/30 px-3 py-1 rounded-full flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-cyan-400 glow-pulse"></div>
+<span class="font-label-md text-label-md text-primary">LIVE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter md:gap-6">
+<!-- Left Column: Status & Driver -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Status Map Card -->
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl overflow-hidden shadow-[0_16px_24px_rgba(0,0,0,0.4)] relative">
+<!-- Map Placeholder -->
+<div class="w-full h-48 md:h-64 relative bg-surface-container-lowest">
+<img class="w-full h-full object-cover opacity-60" data-alt="A stylized, dark-mode top-down digital map of a city with glowing neon amber and cyan routes intersecting modern hospital buildings. Cinematic lighting, high tech logistics dashboard aesthetic, deep charcoal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWJaBoccE-fJhyC3JkbBF0qDeMnLnwye9C15NMxQm-0fZVF16QbrN485jpZ4-ZMNEV1Riq3czS49GNZVjTvKBJ5oe7MOBJqE8o9BL2QQ-aXEFS3-0xWXc9NMc5qQI51zKg8FEB_3U6P7ooNNh7m9rnjhv_cknlK8kr1xsIRz3gfTe54kqlMicjZwh6Nc6D4iz9jXzRXoKrMKw5rwzABTdgZbcqQBlelpBOEXmyMkDzdjioCBQ5Lrno"/>
+<!-- Live Marker -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="bg-primary text-on-primary px-3 py-1 rounded-full font-label-md text-label-md shadow-lg mb-2 z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span> 2 mins
+                             </div>
+<div class="w-4 h-4 bg-cyan-400 rounded-full border-2 border-surface shadow-[0_0_15px_rgba(34,211,238,0.8)] glow-pulse"></div>
+</div>
+</div>
+<div class="p-4 md:p-6 bg-[#1E1E1E] z-10 relative">
+<h2 class="font-title-md text-title-md mb-2">On the Way</h2>
+<p class="font-body-md text-on-surface-variant mb-4">Marcus is picking up your medicine at City Gen Hospital.</p>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary w-1/4"></div>
+<div class="h-full bg-primary w-1/4"></div>
+<div class="h-full bg-primary w-1/4"></div>
+<div class="h-full bg-[#22D3EE] w-[12%] glow-pulse relative"></div>
+</div>
+</div>
+</div>
+<!-- Driver Profile Card -->
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 md:p-6 shadow-[0_8px_16px_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a male hospital logistics courier named Marcus wearing dark premium scrubs. Soft, moody lighting with a subtle rim light, dark background, exuding reliability and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ1yGk3fuR8UxPyB16jcWdvtWumZAM_hzt06LeVwQeZSME_6v_YuxYO1t7uLOHCCOzsoV8jeLWMihYTjashtR4FYkD-QSZ9wyi0sqcjlBgrB21rgHt_aOcBypIZB-6I7eLhuXn8nP6wO0mNp8UQCnp016BmlmjE10aUiTcPAS2tBLUoqpnG2V5V6JZM_eaBzn_mERFA_Yt0GZ2ZE5ypnxV85O52Ah_pL_gNdjF6nu_cISIHTSreBSL"/>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md">Marcus Lee</h3>
+<div class="flex items-center gap-2 font-body-md text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">star</span>
+<span>4.9 (120 trips)</span>
+<span>•</span>
+<span>CareDrop Certified</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 h-12 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors border-t border-white/10">
+<span class="material-symbols-outlined">call</span>
+                            Contact
+                        </button>
+<button class="flex-1 h-12 bg-transparent border border-outline hover:border-primary text-primary font-label-md text-label-md rounded-lg flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined">my_location</span>
+                            Track
+                        </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline & Details -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Timeline Card -->
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 md:p-6 shadow-[0_8px_16px_rgba(0,0,0,0.3)]">
+<h3 class="font-title-md text-title-md mb-6">Delivery Progress</h3>
+<div class="relative pl-6 border-l-2 border-surface-container-highest space-y-8 ml-2">
+<!-- Step 1 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container">check</span>
+</div>
+<p class="font-body-md text-on-surface">Request Submitted</p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">09:41 AM</p>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container">check</span>
+</div>
+<p class="font-body-md text-on-surface">Driver Found</p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">09:43 AM</p>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container">check</span>
+</div>
+<p class="font-body-md text-on-surface">Request Accepted</p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">09:45 AM</p>
+</div>
+<!-- Step 4 ACTIVE -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-[#22D3EE] flex items-center justify-center glow-pulse border-2 border-surface">
+<span class="material-symbols-outlined text-[14px] text-[#001f25]">directions_car</span>
+</div>
+<p class="font-body-md text-[#22D3EE] font-bold">On the Way</p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Expected 10:15 AM</p>
+</div>
+<!-- Step 5 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-surface-container-high border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">location_on</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Arrived</p>
+</div>
+<!-- Step 6 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-surface-container-high border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">inventory_2</span>
+</div>
+<p class="font-body-md text-on-surface-variant">In Progress</p>
+</div>
+<!-- Step 7 -->
+<div class="relative">
+<div class="absolute -left-[35px] top-0 w-6 h-6 rounded-full bg-surface-container-high border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">flag</span>
+</div>
+<p class="font-body-md text-on-surface-variant">Completed</p>
+</div>
+</div>
+</div>
+<!-- Task Details Card -->
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 md:p-6 shadow-[0_8px_16px_rgba(0,0,0,0.3)]">
+<h3 class="font-title-md text-title-md mb-4">Task Details</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">medication</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">ITEM</p>
+<p class="font-body-md text-on-surface">Medicine Pickup (Prescription #RX-992)</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">local_hospital</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">LOCATION</p>
+<p class="font-body-md text-on-surface">City Gen Hospital, Pharmacy Wing</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">notes</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">INSTRUCTIONS</p>
+<p class="font-body-md text-on-surface">Please ask for Dr. Smith's clearance desk.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container text-primary dark:text-primary font-label-md text-label-md font-headline-lg-mobile text-headline-lg-mobile text-primary fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container shadow-[0_-4px_24px_0_rgba(0,0,0,0.4)] flex justify-around items-center w-full h-20 pb-safe px-base md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">assignment</span>
+<span class="mt-1">Requests</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary-container text-on-secondary-container dark:text-on-secondary-container rounded-xl px-4 py-1 hover:text-primary dark:hover:text-primary scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="mt-1">Track</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

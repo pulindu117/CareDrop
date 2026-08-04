@@ -1,0 +1,195 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CareDrop - Profile Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#d3c4b1",
+                        "outline": "#9c8f7e",
+                        "on-secondary-container": "#00515d",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-container": "#d9a44a",
+                        "secondary": "#5de6ff",
+                        "primary-fixed": "#ffdead",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed-dim": "#f5bd60",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#281900",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-container": "#583b00",
+                        "tertiary": "#51e0a5",
+                        "on-primary-fixed-variant": "#604100",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "inverse-primary": "#7f5700",
+                        "surface-tint": "#f5bd60",
+                        "inverse-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "on-secondary": "#00363e",
+                        "primary": "#f7bf62",
+                        "on-tertiary-fixed": "#002113",
+                        "on-tertiary": "#003824",
+                        "on-surface": "#e5e2e1",
+                        "secondary-fixed": "#a2eeff",
+                        "secondary-container": "#00cbe6",
+                        "on-tertiary-container": "#004b32",
+                        "tertiary-container": "#29c48b",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "outline-variant": "#4f4537",
+                        "surface-dim": "#131313",
+                        "surface-bright": "#393939",
+                        "on-primary": "#432c00",
+                        "surface-container": "#201f1f",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed": "#001f25",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#004e5a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "title-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface w-full top-0 sticky z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 flat no shadows">
+<div class="flex items-center gap-3">
+<button aria-label="Go back" class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined text-title-md">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">CareDrop</h1>
+</div>
+<div class="flex items-center gap-2">
+<!-- No trailing icons for setup flow -->
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 md:py-12">
+<div class="w-full max-w-md w-full">
+<!-- Progress Indicator -->
+<div class="mb-8 w-full flex flex-col gap-2">
+<div class="flex justify-between items-center w-full">
+<span class="font-label-md text-label-md text-on-surface-variant">Step 1 of 3</span>
+<span class="font-label-md text-label-md text-primary">Basic Info</span>
+</div>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-primary w-1/3 rounded-full relative shadow-[0_0_8px_rgba(247,191,98,0.4)]">
+<div class="absolute inset-0 bg-white/20 w-full animate-[pulse_2s_ease-in-out_infinite]"></div>
+</div>
+</div>
+</div>
+<!-- Setup Header -->
+<div class="mb-10 text-center">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Basic Information</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Help us create your CareDrop profile to streamline your logistics coordination.</p>
+</div>
+<form class="flex flex-col gap-8 w-full" id="profile-setup-form">
+<!-- Profile Photo Upload -->
+<div class="flex flex-col items-center justify-center gap-4">
+<div class="relative group cursor-pointer">
+<div class="w-32 h-32 rounded-full bg-surface-container border-2 border-dashed border-outline-variant flex flex-col items-center justify-center overflow-hidden transition-all duration-200 group-hover:border-primary group-hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-display-lg text-on-surface-variant group-hover:text-primary transition-colors">account_circle</span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-1 group-hover:text-primary">Upload</span>
+<!-- Hidden input for actual upload logic if this were real -->
+<input accept="image/*" class="hidden" type="file">
+</div>
+<button class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container p-2 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.5)] border border-outline-variant hover:bg-primary transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+</button>
+</div>
+</div>
+<!-- Input Fields -->
+<div class="flex flex-col gap-6 w-full">
+<!-- Full Name -->
+<div class="flex flex-col gap-1 w-full">
+<label class="font-label-md text-label-md text-on-surface-variant" for="fullName">Full Name</label>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">person</span>
+<input class="w-full bg-[#181818] border-0 border-b-2 border-outline-variant text-on-surface font-body-lg text-body-lg px-4 py-3 pl-12 rounded-t-lg focus:ring-0 focus:border-primary transition-colors placeholder:text-outline-variant h-12" id="fullName" placeholder="e.g. Dr. Sarah Jenkins" type="text">
+</div>
+</div>
+<!-- Date of Birth -->
+<div class="flex flex-col gap-1 w-full">
+<label class="font-label-md text-label-md text-on-surface-variant" for="dob">Date of Birth</label>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">calendar_month</span>
+<input class="w-full bg-[#181818] border-0 border-b-2 border-outline-variant text-on-surface font-body-lg text-body-lg px-4 py-3 pl-12 rounded-t-lg focus:ring-0 focus:border-primary transition-colors placeholder:text-outline-variant h-12 [color-scheme:dark]" id="dob" type="date">
+</div>
+</div>
+<!-- Department / Role (Optional addition for realism in this domain) -->
+<div class="flex flex-col gap-1 w-full">
+<label class="font-label-md text-label-md text-on-surface-variant" for="department">Primary Department</label>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">domain</span>
+<select class="w-full bg-[#181818] border-0 border-b-2 border-outline-variant text-on-surface font-body-lg text-body-lg px-4 py-3 pl-12 rounded-t-lg focus:ring-0 focus:border-primary transition-colors h-12 appearance-none" id="department">
+<option class="text-outline-variant" disabled="" selected="" value="">Select Department</option>
+<option value="er">Emergency Room (ER)</option>
+<option value="icu">Intensive Care Unit (ICU)</option>
+<option value="lab">Pathology &amp; Labs</option>
+<option value="pharmacy">Pharmacy</option>
+<option value="surgery">Surgery</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</form>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="w-full bg-surface-container-low border-t border-outline-variant p-margin-mobile md:px-margin-desktop py-4 sticky bottom-0 z-40">
+<div class="max-w-md mx-auto w-full flex justify-end">
+<button class="h-12 px-8 bg-[#D9A44A] text-[#131313] rounded-full font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-primary transition-colors active:scale-95 w-full md:w-auto relative overflow-hidden group" onclick="document.getElementById('profile-setup-form').submit()" type="button">
+<span class="absolute top-0 left-0 w-full h-[1px] bg-white/30 rounded-t-full"></span> <!-- Subtle Glint -->
+                Next
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

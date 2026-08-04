@@ -1,0 +1,241 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CareDrop - Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-tertiary": "#003824",
+                            "outline": "#9c8f7e",
+                            "surface-container": "#201f1f",
+                            "secondary-container": "#00cbe6",
+                            "surface-dim": "#131313",
+                            "on-primary-fixed-variant": "#604100",
+                            "on-primary-fixed": "#281900",
+                            "on-surface-variant": "#d3c4b1",
+                            "primary-container": "#d9a44a",
+                            "secondary": "#5de6ff",
+                            "on-secondary-container": "#00515d",
+                            "tertiary-container": "#29c48b",
+                            "on-surface": "#e5e2e1",
+                            "primary-fixed-dim": "#f5bd60",
+                            "error": "#ffb4ab",
+                            "on-error": "#690005",
+                            "on-primary": "#432c00",
+                            "surface-tint": "#f5bd60",
+                            "primary": "#f7bf62",
+                            "inverse-surface": "#e5e2e1",
+                            "surface-container-low": "#1c1b1b",
+                            "error-container": "#93000a",
+                            "on-secondary-fixed-variant": "#004e5a",
+                            "inverse-on-surface": "#313030",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-tertiary-fixed-variant": "#005236",
+                            "surface-bright": "#393939",
+                            "on-tertiary-container": "#004b32",
+                            "surface-variant": "#353534",
+                            "on-secondary": "#00363e",
+                            "outline-variant": "#4f4537",
+                            "on-secondary-fixed": "#001f25",
+                            "primary-fixed": "#ffdead",
+                            "surface": "#131313",
+                            "on-tertiary-fixed": "#002113",
+                            "tertiary-fixed-dim": "#4edea3",
+                            "secondary-fixed-dim": "#2fd9f4",
+                            "secondary-fixed": "#a2eeff",
+                            "surface-container-highest": "#353534",
+                            "on-error-container": "#ffdad6",
+                            "inverse-primary": "#7f5700",
+                            "on-primary-container": "#583b00",
+                            "tertiary-fixed": "#6ffbbe",
+                            "tertiary": "#51e0a5",
+                            "on-background": "#e5e2e1",
+                            "surface-container-high": "#2a2a2a",
+                            "background": "#131313"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "gutter": "16px",
+                            "margin-mobile": "16px",
+                            "container-max": "1280px",
+                            "margin-desktop": "32px",
+                            "base": "8px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": ["Inter"],
+                            "body-md": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "display-lg": ["Inter"],
+                            "title-md": ["Inter"],
+                            "label-md": ["Inter"],
+                            "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        /* Ambient Background Glow */
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle at 50% 50%, rgba(217, 164, 74, 0.05) 0%, rgba(18, 18, 18, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Custom Checkbox */
+        .form-checkbox {
+            appearance: none;
+            background-color: theme('colors.surface');
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.25em;
+            height: 1.25em;
+            border: 1px solid theme('colors.outline');
+            border-radius: 0.25em;
+            display: grid;
+            place-content: center;
+        }
+
+        .form-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em theme('colors.primary-container');
+            background-color: theme('colors.primary-container');
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+
+        .form-checkbox:checked::before {
+            transform: scale(1);
+        }
+
+        .form-checkbox:focus {
+            outline: 2px solid theme('colors.primary');
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<div class="ambient-glow"></div>
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop relative z-10">
+<!-- Registration Card Container -->
+<div class="w-full max-w-md bg-surface-container-low rounded-xl border border-surface-container-highest shadow-[0_16px_32px_-12px_rgba(0,0,0,0.5)] overflow-hidden">
+<!-- Brand Header -->
+<div class="pt-8 pb-6 px-8 text-center border-b border-surface-container-high">
+<h1 class="font-headline-lg text-headline-lg text-primary flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                    CareDrop
+                </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Create an account to manage hospital logistics</p>
+</div>
+<!-- Registration Form -->
+<form class="p-8 space-y-6" onsubmit="event.preventDefault(); window.location.href='#';">
+<!-- Full Name -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider" for="fullName">Full Name</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined">person</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-dim border-none rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface transition-colors duration-200 h-12" id="fullName" name="fullName" placeholder="Dr. Jane Smith" required="" type="text">
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider" for="email">Email Address</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined">mail</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-dim border-none rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface transition-colors duration-200 h-12" id="email" name="email" placeholder="jane.smith@hospital.org" required="" type="email">
+</div>
+</div>
+<!-- Phone Number -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider" for="phone">Phone Number</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined">phone</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-dim border-none rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface transition-colors duration-200 h-12" id="phone" name="phone" placeholder="(555) 123-4567" required="" type="tel">
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider" for="password">Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined">lock</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-dim border-none rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface transition-colors duration-200 h-12" id="password" name="password" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Confirm Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-2 uppercase tracking-wider" for="confirmPassword">Confirm Password</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined">lock_reset</span>
+</span>
+<input class="block w-full pl-10 pr-3 py-3 bg-surface-dim border-none rounded-lg font-body-lg text-body-lg text-on-surface placeholder-outline-variant focus:ring-2 focus:ring-primary focus:bg-surface transition-colors duration-200 h-12" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required="" type="password">
+</div>
+</div>
+<!-- Terms and Privacy -->
+<div class="flex items-start gap-3 mt-4">
+<div class="flex items-center h-5">
+<input class="form-checkbox" id="terms" name="terms" required="" type="checkbox">
+</div>
+<label class="font-body-md text-body-md text-on-surface-variant" for="terms">
+                        I agree to the <a class="text-primary hover:underline transition-all" href="#">Terms of Service</a> and <a class="text-primary hover:underline transition-all" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-title-md text-title-md h-12 rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] mt-8" type="submit">
+<span>Create Account</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Login Link -->
+<div class="text-center mt-6">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Already have an account? <a class="text-primary hover:text-primary-fixed transition-colors font-title-md text-[14px]" href="#">Log in</a>
+</p>
+</div>
+</form>
+</div>
+</main>
+</body></html>

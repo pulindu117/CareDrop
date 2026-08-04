@@ -1,0 +1,257 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CareDrop - Patient/Guardian Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#d3c4b1",
+                      "outline": "#9c8f7e",
+                      "on-secondary-container": "#00515d",
+                      "surface-container-high": "#2a2a2a",
+                      "primary-container": "#d9a44a",
+                      "secondary": "#5de6ff",
+                      "primary-fixed": "#ffdead",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-container-highest": "#353534",
+                      "surface-container-low": "#1c1b1b",
+                      "primary-fixed-dim": "#f5bd60",
+                      "on-error-container": "#ffdad6",
+                      "on-primary-fixed": "#281900",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-container": "#583b00",
+                      "tertiary": "#51e0a5",
+                      "on-primary-fixed-variant": "#604100",
+                      "surface-variant": "#353534",
+                      "surface": "#131313",
+                      "background": "#131313",
+                      "on-background": "#e5e2e1",
+                      "inverse-primary": "#7f5700",
+                      "surface-tint": "#f5bd60",
+                      "inverse-surface": "#e5e2e1",
+                      "error-container": "#93000a",
+                      "on-secondary": "#00363e",
+                      "primary": "#f7bf62",
+                      "on-tertiary-fixed": "#002113",
+                      "on-tertiary": "#003824",
+                      "on-surface": "#e5e2e1",
+                      "secondary-fixed": "#a2eeff",
+                      "secondary-container": "#00cbe6",
+                      "on-tertiary-container": "#004b32",
+                      "tertiary-container": "#29c48b",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "outline-variant": "#4f4537",
+                      "surface-dim": "#131313",
+                      "surface-bright": "#393939",
+                      "on-primary": "#432c00",
+                      "surface-container": "#201f1f",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "on-secondary-fixed": "#001f25",
+                      "inverse-on-surface": "#313030",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-error": "#690005",
+                      "on-secondary-fixed-variant": "#004e5a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "32px",
+                      "container-max": "1280px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface flex justify-between items-center px-margin-mobile h-16 z-40">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant bg-surface-container-high flex-shrink-0">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close-up portrait of a female doctor, Dr. Jane, in her late 30s with short dark hair, wearing a clean white medical coat over a dark grey scrub top. The lighting is soft and professional, highlighting her warm and reassuring expression. The background is slightly blurred but suggests a modern, high-tech hospital environment with subtle cool-toned lights, fitting the dark-mode corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCosQ1OAQ6DDW5GCsOdjA84oVi7i5hIbiDqMNZrra5ihGAgHqJ2vL65XrpDkL_Kvj448EXb9pbbynYfNUxBjSyAt5Odq2W5fXPTyhJsJc5T6EQAUAG1R91rHhxI3txUenVCwBaNWUTg2xd3XEEI66gEwvEwNwWLmA5KkKjXu9-x58i-JiMaJtE9Tx6kqGQzAaTQuhLJyf16MmLqWLOxDdbd4CYS5cqFo8mNf5eaP6KkXKwuxTBCi35D">
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">Greeting</p>
+<h1 class="font-title-md text-title-md text-primary tracking-tight">Hello, Dr. Jane</h1>
+</div>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-150 p-2 rounded-full w-12 h-12 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</header>
+<main class="flex-grow px-margin-mobile flex flex-col gap-8 mt-4 md:px-margin-desktop md:max-w-container-max md:mx-auto w-full">
+<!-- Active Task -->
+<section class="flex flex-col gap-4">
+<h2 class="font-title-md text-title-md text-on-surface">Active Task</h2>
+<div class="bg-[#1E1E1E] rounded-xl border border-[#2C2C2C] p-4 flex flex-col gap-4 relative overflow-hidden">
+<!-- Subtle glow effect -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary opacity-10 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-container bg-opacity-20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">local_pharmacy</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Medicine Pickup</h3>
+<p class="font-body-md text-body-md text-secondary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+                                On the way
+                            </p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="Assistant Marcus Lee" class="w-full h-full object-cover" data-alt="A close-up headshot of a male hospital logistics assistant named Marcus Lee. He is wearing a dark, professional uniform with a subtle ID badge visible. His expression is focused and capable. The lighting is low-key, illuminating his face against a dark, moody background, consistent with a high-stakes, corporate modern healthcare setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Z42rbHC0iBijWcW-mnchWDZ4iODRV-xssYOVc6xYkmNsKaU1apQvMWGIxYldFAgLRqMRxiqICfOYTbfG8FzdcGtNPzr8cK7w426ji7cSPy6eN2WEAwrmCSE0gRWH0sYyddX8ufm5yAjGUVia3-IljWzGIJRAAE_kfvhiLsmzU7ajqllXPJSMusv0qjV3jnW2H7vJ8ly9NRrFPyM1u0bbNggQEz0rOXANkSf0ywDifXJSjexxYaYL">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Assistant</span>
+<span class="font-body-md text-body-md text-on-surface">Marcus Lee</span>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 min-h-[48px] active:scale-95 transition-transform relative overflow-hidden group">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-white opacity-10"></div>
+                        Track
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Categories -->
+<section class="flex flex-col gap-4">
+<h2 class="font-title-md text-title-md text-on-surface">Categories</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-tertiary text-3xl">medication</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Medicine Pickup</span>
+</button>
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-primary text-3xl">science</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Lab Reports</span>
+</button>
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-secondary text-3xl">group</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Queue Assistance</span>
+</button>
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-[#F43F5E] text-3xl">restaurant</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Food Delivery</span>
+</button>
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-[#A855F7] text-3xl">inventory_2</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Items</span>
+</button>
+<button class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex flex-col items-center justify-center gap-3 hover:bg-surface-container-high transition-colors active:scale-95 min-h-[100px]">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">apps</span>
+<span class="font-body-md text-body-md text-on-surface text-center">Others</span>
+</button>
+</div>
+</section>
+<!-- Recent Requests -->
+<section class="flex flex-col gap-4 mb-8">
+<div class="flex justify-between items-center">
+<h2 class="font-title-md text-title-md text-on-surface">Recent Requests</h2>
+<button class="font-label-md text-label-md text-primary hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex justify-between items-center min-h-[64px] hover:bg-surface-container-high cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">science</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Blood Test Results</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Today, 10:30 AM</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-tertiary bg-tertiary-container bg-opacity-20 px-2 py-1 rounded">Completed</span>
+</div>
+<div class="bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-4 flex justify-between items-center min-h-[64px] hover:bg-surface-container-high cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">restaurant</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface">Dietary Meal Delivery</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Yesterday, 1:15 PM</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-tertiary bg-tertiary-container bg-opacity-20 px-2 py-1 rounded">Completed</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 bg-surface-container-low z-50 md:hidden rounded-t-xl shadow-[0_-4px_24px_0_rgba(0,0,0,0.4)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 p-2">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 p-2">
+<span class="material-symbols-outlined mb-1">assignment</span>
+<span class="font-label-md text-label-md">Requests</span>
+</button>
+<!-- Highlighted Active Tab -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 duration-200 -mt-6 shadow-lg relative border-2 border-surface">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-white opacity-20 rounded-t-full"></div>
+<span class="material-symbols-outlined text-[28px] mb-0.5">add_circle</span>
+<span class="font-label-md text-label-md">Create</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 p-2">
+<span class="material-symbols-outlined mb-1">chat_bubble</span>
+<span class="font-label-md text-label-md">Messages</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 duration-200 p-2">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+</body></html>

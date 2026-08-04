@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Request - CareDrop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#a2eeff",
+                      "surface-dim": "#131313",
+                      "surface-bright": "#393939",
+                      "primary-fixed-dim": "#f5bd60",
+                      "on-secondary-fixed": "#001f25",
+                      "tertiary": "#51e0a5",
+                      "inverse-on-surface": "#313030",
+                      "primary-container": "#d9a44a",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#004b32",
+                      "on-tertiary": "#003824",
+                      "on-error": "#690005",
+                      "primary-fixed": "#ffdead",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed": "#281900",
+                      "on-primary": "#432c00",
+                      "on-primary-container": "#583b00",
+                      "inverse-primary": "#7f5700",
+                      "on-primary-fixed-variant": "#604100",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "background": "#131313",
+                      "surface-container-highest": "#353534",
+                      "primary": "#f7bf62",
+                      "inverse-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "on-secondary": "#00363e",
+                      "outline": "#9c8f7e",
+                      "on-secondary-container": "#00515d",
+                      "surface-container": "#201f1f",
+                      "tertiary-container": "#29c48b",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary": "#5de6ff",
+                      "surface-container-high": "#2a2a2a",
+                      "secondary-container": "#00cbe6",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-tint": "#f5bd60",
+                      "outline-variant": "#4f4537",
+                      "on-tertiary-fixed": "#002113",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#d3c4b1",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-variant": "#353534",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "gutter": "16px",
+                      "base": "8px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .card-border {
+            border: 1px solid #2C2C2C;
+        }
+        .soft-shadow {
+            box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.4);
+        }
+        .btn-glint {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- Top Navigation for transactional/linear flow - No Nav Shell per rules, just back button -->
+<header class="w-full top-0 sticky bg-surface flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full z-50">
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center rounded-full p-2 hover:bg-surface-container-high active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight">Review Request</h1>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6">
+<div class="max-w-2xl mx-auto space-y-6">
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                Please review the details below before submitting your drop request. Ensure all information is accurate to guarantee a smooth delivery.
+            </p>
+<!-- Medication Details Card -->
+<section class="bg-[#1E1E1E] rounded-xl p-6 card-border relative">
+<div class="flex justify-between items-start mb-4">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">medication</span>
+                        Medicine Details
+                    </h2>
+<button class="text-primary hover:text-primary-fixed transition-colors text-sm font-label-md flex items-center gap-1 bg-surface-container-high px-3 py-1.5 rounded-full hover:bg-surface-container-highest active:scale-95">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Medicine Name</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1 font-semibold">Epinephrine Auto-Injector (0.3mg)</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Quantity</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1">2 Units</p>
+</div>
+<div class="col-span-1 md:col-span-2">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Prescription Status</p>
+<div class="inline-flex items-center gap-2 mt-1 bg-tertiary-container/10 px-3 py-1 rounded-full border border-tertiary-container/20">
+<span class="material-symbols-outlined text-tertiary-container text-sm">verified</span>
+<span class="font-label-md text-label-md text-tertiary-container">Verified on File</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Destination Details Card -->
+<section class="bg-[#1E1E1E] rounded-xl p-6 card-border relative">
+<div class="flex justify-between items-start mb-4">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+                        Destination
+                    </h2>
+<button class="text-primary hover:text-primary-fixed transition-colors text-sm font-label-md flex items-center gap-1 bg-surface-container-high px-3 py-1.5 rounded-full hover:bg-surface-container-highest active:scale-95">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                    </button>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Hospital Name</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1 font-semibold">St. Jude Medical Center</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Location / Department</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1">Emergency Room - Triage Bay 4</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">101 E Valencia Mesa Dr, Fullerton, CA 92835</p>
+</div>
+</div>
+</section>
+<!-- Timing Details Card -->
+<section class="bg-[#1E1E1E] rounded-xl p-6 card-border relative">
+<div class="flex justify-between items-start mb-4">
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">schedule</span>
+                        Timing
+                    </h2>
+<button class="text-primary hover:text-primary-fixed transition-colors text-sm font-label-md flex items-center gap-1 bg-surface-container-high px-3 py-1.5 rounded-full hover:bg-surface-container-highest active:scale-95">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Delivery Date</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1 font-semibold">Today, Oct 24</p>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Requested Window</p>
+<p class="font-body-lg text-body-lg text-on-surface mt-1 text-primary">ASAP (Urgent)</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant p-4 md:p-6 shadow-[0_-4px_24px_0_rgba(0,0,0,0.4)] z-50">
+<div class="max-w-2xl mx-auto flex flex-col md:flex-row gap-4 items-center justify-between">
+<div class="hidden md:block">
+<p class="font-body-md text-body-md text-on-surface-variant">Total Estimated Time</p>
+<p class="font-title-md text-title-md text-on-surface">~ 15 Mins</p>
+</div>
+<button class="w-full md:w-auto flex-grow bg-primary-container text-on-primary-container font-title-md text-title-md py-4 px-8 rounded-xl flex items-center justify-center gap-2 hover:bg-primary transition-colors btn-glint active:scale-[0.98] duration-200">
+                Confirm &amp; Submit Request
+                <span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Assistant Profile - Marcus Lee</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#313030",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "error-container": "#93000a",
+                        "secondary-fixed": "#a2eeff",
+                        "secondary": "#5de6ff",
+                        "surface-tint": "#f5bd60",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#004e5a",
+                        "on-background": "#e5e2e1",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#00cbe6",
+                        "tertiary": "#51e0a5",
+                        "primary-fixed": "#ffdead",
+                        "primary": "#f7bf62",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353534",
+                        "on-primary": "#432c00",
+                        "on-surface-variant": "#d3c4b1",
+                        "on-secondary": "#00363e",
+                        "outline": "#9c8f7e",
+                        "on-primary-fixed": "#281900",
+                        "inverse-primary": "#7f5700",
+                        "on-tertiary-container": "#004b32",
+                        "on-secondary-container": "#00515d",
+                        "error": "#ffb4ab",
+                        "on-primary-container": "#583b00",
+                        "secondary-fixed-dim": "#2fd9f4",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#393939",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-secondary-fixed": "#001f25",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "outline-variant": "#4f4537",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-container": "#29c48b",
+                        "on-surface": "#e5e2e1",
+                        "primary-container": "#d9a44a",
+                        "on-tertiary": "#003824",
+                        "tertiary-fixed": "#6ffbbe",
+                        "surface-container-highest": "#353534",
+                        "primary-fixed-dim": "#f5bd60",
+                        "on-primary-fixed-variant": "#604100",
+                        "surface-container-lowest": "#0e0e0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle pulse for the active indicator */
+        @keyframes subtle-pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 211, 238, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+        .live-indicator {
+            animation: subtle-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top App Bar (Task-Focused: Suppressed global nav elements, back button emphasized) -->
+<header class="bg-surface sticky top-0 z-40 shadow-sm transition-colors duration-200">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop w-full h-16 max-w-container-max mx-auto">
+<button aria-label="Go Back" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors duration-200">
+<span class="material-symbols-outlined text-primary text-[24px]">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-center flex-grow">Profile</h1>
+<div class="w-12"></div> <!-- Spacer to balance header -->
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter md:gap-margin-desktop">
+<!-- Left Column: Profile Card & Trust Indicators -->
+<div class="md:col-span-4 flex flex-col gap-gutter md:gap-margin-desktop">
+<!-- Main Profile Bento Card -->
+<div class="bg-[#1E1E1E] rounded-xl border border-[#2C2C2C] shadow-[0_16px_24px_rgba(0,0,0,0.4)] overflow-hidden relative group">
+<div class="h-32 bg-surface-container-high w-full relative">
+<!-- Decorative background pattern instead of data-alt heavy image for header -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, #f7bf62 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+<div class="px-6 pb-6 relative">
+<div class="absolute -top-16 left-6 p-1 bg-[#1E1E1E] rounded-full">
+<img alt="Marcus Lee" class="w-24 h-24 rounded-full object-cover border-2 border-primary-container" data-alt="A professional headshot of a reliable community assistant in a dark uniform, soft high-quality studio lighting highlighting a trustworthy expression. Corporate modern aesthetic with dark, muted tones and a subtle warm amber rim light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG_1VQoj60GXVfEzjYUYlflMaDoXBVruoGT8UFTF9hxJdoGj3j2NHn5-tGGeSUPWyEsYF0DgU8o2gZTcCK9lazwX71yydUExW_TTzzvtuCoM-2ggtyye2eCfLPw3MVDbxdKlG4JmV_pNEKTyJuQ5gVgEHc5l1HDH1hXdBNRo-8k4Jc6IMi6OnEzuVYHXAHCK4JbpK_WivHqAdJ-ba6Q0Iera7GJmHHZAO_AH5oxh1tr5zQRKXuTzCx"/>
+</div>
+<div class="mt-12 flex justify-between items-start">
+<div>
+<h2 class="font-title-md text-title-md text-on-surface flex items-center gap-2">
+                                    Marcus Lee
+                                    <span class="material-symbols-outlined filled text-primary text-[20px]" title="Trusted Badge">verified</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Community Assistant</p>
+<p class="font-label-md text-label-md text-outline mt-2">Member since 2023</p>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-4 border-t border-[#2C2C2C] pt-4">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined filled text-primary text-[20px]">star</span>
+<span class="font-title-md text-title-md">4.9</span>
+</div>
+<div class="w-px h-6 bg-[#2C2C2C]"></div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">124</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Tasks Completed</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Indicators Card -->
+<div class="bg-[#1E1E1E] rounded-xl border border-[#2C2C2C] p-6">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider mb-4">Verification &amp; Trust</h3>
+<ul class="flex flex-col gap-4">
+<li class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Phone Verified</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[18px]">mark_email_read</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Email Verified</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/20 flex items-center justify-center relative">
+<div class="w-2 h-2 rounded-full bg-secondary live-indicator absolute"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">100% Completion Rate</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[18px]">gpp_good</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Background Checked</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Column: Details & Reviews -->
+<div class="md:col-span-8 flex flex-col gap-gutter md:gap-margin-desktop">
+<!-- About Section (Glassmorphism inspired dark card) -->
+<div class="bg-[#1E1E1E]/80 backdrop-blur-md rounded-xl border border-[#2C2C2C] p-6 md:p-8">
+<h3 class="font-title-md text-title-md text-on-surface mb-4">About Marcus</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Dedicated professional with extensive experience in high-stakes coordination and community assistance. Specializing in rapid response and calm, reliable execution of logistics tasks. I prioritize clear communication and meticulous attention to detail to ensure seamless operations in fast-paced environments.
+                    </p>
+<div class="mt-8 flex flex-wrap gap-2">
+<span class="px-3 py-1 rounded-full bg-surface-container border border-[#2C2C2C] font-label-md text-label-md text-on-surface-variant">Rapid Logistics</span>
+<span class="px-3 py-1 rounded-full bg-surface-container border border-[#2C2C2C] font-label-md text-label-md text-on-surface-variant">Asset Transport</span>
+<span class="px-3 py-1 rounded-full bg-surface-container border border-[#2C2C2C] font-label-md text-label-md text-on-surface-variant">Supply Chain</span>
+</div>
+</div>
+<!-- Recent Reviews -->
+<div class="bg-[#1E1E1E] rounded-xl border border-[#2C2C2C] p-6 md:p-8">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-title-md text-title-md text-on-surface">Recent Reviews</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors">View All</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Highlighted Review -->
+<div class="bg-surface-container rounded-lg p-5 border-l-4 border-primary">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+</div>
+<span class="font-label-md text-label-md text-outline">2 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">"Marcus was incredibly fast and professional. Handled a complex transport request perfectly under pressure."</p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-3">- Dr. S. Chen</p>
+</div>
+<!-- Secondary Review -->
+<div class="bg-surface rounded-lg p-5 border border-[#2C2C2C]">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-primary text-[16px]">star</span>
+</div>
+<span class="font-label-md text-label-md text-outline">1 week ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">"Always reliable. Shows up early and requires minimal direction. Exactly what we need."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Area (Bottom Fixed for accessibility) -->
+<div class="fixed bottom-0 left-0 w-full bg-[#1E1E1E]/95 backdrop-blur-md border-t border-[#2C2C2C] p-margin-mobile md:px-margin-desktop md:py-6 z-50">
+<div class="max-w-container-max mx-auto flex items-center justify-between gap-4">
+<div class="hidden md:flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">Selected Assistant</span>
+<span class="font-title-md text-title-md text-on-surface">Marcus Lee</span>
+</div>
+<!-- Primary Action Button with glint effect -->
+<button class="w-full md:w-auto h-12 md:h-14 px-8 bg-primary-container text-on-primary-container rounded-lg font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-primary transition-colors shadow-sm relative overflow-hidden group flex-grow md:flex-grow-0">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-white/20"></div>
+                Confirm Assistant
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

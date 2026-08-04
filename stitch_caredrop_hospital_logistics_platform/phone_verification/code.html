@@ -1,0 +1,262 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Verify your phone - CareDrop</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#003824",
+                    "outline": "#9c8f7e",
+                    "surface-container": "#201f1f",
+                    "secondary-container": "#00cbe6",
+                    "surface-dim": "#131313",
+                    "on-primary-fixed-variant": "#604100",
+                    "on-primary-fixed": "#281900",
+                    "on-surface-variant": "#d3c4b1",
+                    "primary-container": "#d9a44a",
+                    "secondary": "#5de6ff",
+                    "on-secondary-container": "#00515d",
+                    "tertiary-container": "#29c48b",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#f5bd60",
+                    "error": "#ffb4ab",
+                    "on-error": "#690005",
+                    "on-primary": "#432c00",
+                    "surface-tint": "#f5bd60",
+                    "primary": "#f7bf62",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#004e5a",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "surface-bright": "#393939",
+                    "on-tertiary-container": "#004b32",
+                    "surface-variant": "#353534",
+                    "on-secondary": "#00363e",
+                    "outline-variant": "#4f4537",
+                    "on-secondary-fixed": "#001f25",
+                    "primary-fixed": "#ffdead",
+                    "surface": "#131313",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "secondary-fixed-dim": "#2fd9f4",
+                    "secondary-fixed": "#a2eeff",
+                    "surface-container-highest": "#353534",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#7f5700",
+                    "on-primary-container": "#583b00",
+                    "tertiary-fixed": "#6ffbbe",
+                    "tertiary": "#51e0a5",
+                    "on-background": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "background": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "margin-desktop": "32px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "headline-lg": ["Inter", "sans-serif"],
+                    "display-lg": ["Inter", "sans-serif"],
+                    "title-md": ["Inter", "sans-serif"],
+                    "label-md": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Hide number input arrows */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        /* Subtle background glow effect */
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 0%, rgba(217, 164, 74, 0.05) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col relative overflow-hidden ambient-glow">
+<!-- Transactional Screen - Navigation Suppressed -->
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop w-full relative z-10">
+<div class="w-full max-w-[420px] flex flex-col">
+<!-- Brand Element -->
+<div class="flex items-center gap-2 mb-12 justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1; font-size: 32px;">water_drop</span>
+<span class="font-title-md text-title-md text-on-background tracking-tight">CareDrop</span>
+</div>
+<!-- Header -->
+<div class="text-center mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-3">
+                    Verify your phone
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Enter the 6-digit code sent to <br>
+<span class="font-title-md text-title-md text-on-surface mt-1 block">+1 234 *** 7890</span>
+</p>
+</div>
+<!-- OTP Form -->
+<form class="flex flex-col gap-8 w-full" id="otp-form">
+<!-- Input Group -->
+<div class="flex justify-between w-full gap-2 md:gap-3" id="otp-inputs">
+<!-- Iterating 6 boxes for the code -->
+<input autocomplete="one-time-code" class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+<input class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+<input class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+<input class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+<input class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+<input class="w-12 h-14 sm:w-14 sm:h-16 bg-surface-container rounded-t-DEFAULT border-b-2 border-outline-variant text-center font-headline-lg-mobile text-headline-lg-mobile text-on-surface focus:border-primary focus:bg-surface-container-high focus:outline-none transition-colors shadow-sm" inputmode="numeric" maxlength="1" pattern="[0-9]" required="" type="text">
+</div>
+<!-- Primary CTA -->
+<button class="w-full min-h-[48px] bg-primary-container hover:bg-primary-fixed text-on-primary-container font-label-md text-label-md uppercase tracking-wider rounded-lg flex items-center justify-center transition-all duration-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.2)] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background" type="submit">
+                    Verify
+                </button>
+</form>
+<!-- Resend Action -->
+<div class="mt-8 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                    Resend code in <span class="text-primary font-title-md text-title-md w-12 text-left" id="timer">0:59</span>
+</p>
+<button class="mt-4 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider hover:text-primary transition-colors disabled:opacity-50 disabled:cursor-not-allowed hidden" id="resend-btn" disabled="">
+                    Resend Code
+                </button>
+</div>
+</div>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('#otp-inputs input');
+            const timerElement = document.getElementById('timer');
+            const resendBtn = document.getElementById('resend-btn');
+            const timerContainer = timerElement.parentElement;
+            
+            // Focus first input
+            if(inputs.length > 0) {
+                inputs[0].focus();
+            }
+
+            // OTP Input Logic
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    const val = e.target.value;
+                    // Ensure only numbers
+                    if (/[^0-9]/.test(val)) {
+                        e.target.value = val.replace(/[^0-9]/g, '');
+                        return;
+                    }
+                    
+                    if (val.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+                
+                // Handle paste
+                input.addEventListener('paste', (e) => {
+                    e.preventDefault();
+                    const pastedData = e.clipboardData.getData('text').slice(0, inputs.length).replace(/[^0-9]/g, '');
+                    if (pastedData) {
+                        for (let i = 0; i < pastedData.length; i++) {
+                            if (inputs[index + i]) {
+                                inputs[index + i].value = pastedData[i];
+                                if (index + i < inputs.length - 1) {
+                                    inputs[index + i + 1].focus();
+                                } else {
+                                    inputs[index + i].blur();
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Timer Logic
+            let timeLeft = 59;
+            const updateTimer = () => {
+                if (timeLeft > 0) {
+                    timerElement.textContent = `0:${timeLeft.toString().padStart(2, '0')}`;
+                    timeLeft--;
+                    setTimeout(updateTimer, 1000);
+                } else {
+                    timerContainer.classList.add('hidden');
+                    resendBtn.classList.remove('hidden');
+                    resendBtn.disabled = false;
+                    resendBtn.classList.replace('text-on-surface-variant', 'text-primary');
+                }
+            };
+            
+            // Start timer
+            setTimeout(updateTimer, 1000);
+            
+            // Form Submit (Visual only)
+            document.getElementById('otp-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+                btn.classList.add('opacity-90');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('opacity-90');
+                    // In real app, handle success/fail here
+                }, 1500);
+            });
+            
+            // Resend Click
+            resendBtn.addEventListener('click', () => {
+                resendBtn.disabled = true;
+                resendBtn.classList.add('hidden');
+                timerContainer.classList.remove('hidden');
+                timeLeft = 59;
+                timerElement.textContent = `0:59`;
+                setTimeout(updateTimer, 1000);
+            });
+        });
+    </script>
+</body></html>

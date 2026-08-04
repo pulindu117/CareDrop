@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareDrop - Date and Time</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#a2eeff",
+                      "surface-dim": "#131313",
+                      "surface-bright": "#393939",
+                      "primary-fixed-dim": "#f5bd60",
+                      "on-secondary-fixed": "#001f25",
+                      "tertiary": "#51e0a5",
+                      "inverse-on-surface": "#313030",
+                      "primary-container": "#d9a44a",
+                      "surface": "#131313",
+                      "on-tertiary-container": "#004b32",
+                      "on-tertiary": "#003824",
+                      "on-error": "#690005",
+                      "primary-fixed": "#ffdead",
+                      "on-surface": "#e5e2e1",
+                      "on-primary-fixed": "#281900",
+                      "on-primary": "#432c00",
+                      "on-primary-container": "#583b00",
+                      "inverse-primary": "#7f5700",
+                      "on-primary-fixed-variant": "#604100",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "error": "#ffb4ab",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "background": "#131313",
+                      "surface-container-highest": "#353534",
+                      "primary": "#f7bf62",
+                      "inverse-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "on-secondary": "#00363e",
+                      "outline": "#9c8f7e",
+                      "on-secondary-container": "#00515d",
+                      "surface-container": "#201f1f",
+                      "tertiary-container": "#29c48b",
+                      "error-container": "#93000a",
+                      "surface-container-low": "#1c1b1b",
+                      "secondary": "#5de6ff",
+                      "surface-container-high": "#2a2a2a",
+                      "secondary-container": "#00cbe6",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-tint": "#f5bd60",
+                      "outline-variant": "#4f4537",
+                      "on-tertiary-fixed": "#002113",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#d3c4b1",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "surface-variant": "#353534",
+                      "on-error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "margin-desktop": "32px",
+                      "gutter": "16px",
+                      "base": "8px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-highest'); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline-variant'); 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface flat no shadows z-40">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<!-- Leading: Back Action (since this is a transactional flow) -->
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<!-- Headline -->
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-tight">
+                CareDrop
+            </div>
+<!-- Trailing: Close/Cancel Action -->
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-2 rounded-full active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center px-margin-mobile md:px-margin-desktop py-8 md:py-12 w-full max-w-container-max mx-auto pb-32">
+<!-- Step Indicator -->
+<div class="w-full max-w-2xl mb-8 flex flex-col items-center">
+<span class="font-label-md text-label-md text-primary mb-2 uppercase tracking-wider">Step 4 of 6</span>
+<div class="flex gap-2 w-full max-w-md">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2 text-center">When do you need it?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 text-center max-w-xl">Select a delivery window. ASAP requests are prioritized for immediate dispatch.</p>
+<!-- Segmented Control -->
+<div class="w-full max-w-2xl bg-surface-container p-1 rounded-xl flex mb-8">
+<button class="flex-1 py-3 text-center rounded-lg bg-surface-bright text-on-surface font-title-md text-title-md shadow-[0_2px_8px_rgba(0,0,0,0.2)] transition-all">
+                ASAP
+            </button>
+<button class="flex-1 py-3 text-center rounded-lg text-on-surface-variant font-title-md text-title-md hover:text-on-surface transition-all">
+                Schedule for later
+            </button>
+</div>
+<!-- Date & Time Picker Area (Visible when 'Schedule' is active, conceptually shown here) -->
+<div class="w-full max-w-2xl flex flex-col md:flex-row gap-6 mb-12">
+<!-- Date Picker Card -->
+<div class="flex-1 bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-title-md text-title-md text-on-surface">Select Date</h3>
+<div class="flex gap-2">
+<button class="p-1 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="p-1 rounded bg-surface-container-low text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Calendar Grid (Simplified) -->
+<div class="grid grid-cols-7 gap-1 text-center mb-2">
+<div class="font-label-md text-label-md text-on-surface-variant py-2">S</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">M</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">T</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">W</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">T</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">F</div>
+<div class="font-label-md text-label-md text-on-surface-variant py-2">S</div>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<div class="py-2 text-on-surface-variant opacity-50">28</div>
+<div class="py-2 text-on-surface-variant opacity-50">29</div>
+<div class="py-2 text-on-surface-variant opacity-50">30</div>
+<div class="py-2 text-on-surface-variant opacity-50">31</div>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">1</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">2</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">3</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">4</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">5</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">6</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">7</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">8</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">9</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">10</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">11</button>
+<button class="py-2 bg-primary-container text-on-primary-container rounded-full font-bold shadow-[0_0_12px_rgba(217,164,74,0.3)] border-t border-[rgba(255,255,255,0.1)]">12</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">13</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">14</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">15</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">16</button>
+<button class="py-2 hover:bg-surface-container-highest rounded-full transition-colors">17</button>
+</div>
+</div>
+<!-- Time Picker Card -->
+<div class="flex-1 bg-[#1E1E1E] border border-[#2C2C2C] rounded-xl p-6 flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface mb-6">Select Time</h3>
+<div class="flex-grow flex flex-col justify-center items-center gap-4">
+<div class="flex items-center gap-4 text-display-lg font-display-lg bg-[#181818] p-4 rounded-xl border border-surface-container-highest">
+<div class="flex flex-col items-center">
+<span class="text-on-surface">10</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mt-1">HR</span>
+</div>
+<span class="text-on-surface-variant mb-6">:</span>
+<div class="flex flex-col items-center">
+<span class="text-on-surface">30</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase mt-1">MIN</span>
+</div>
+</div>
+<div class="flex bg-surface-container p-1 rounded-lg">
+<button class="px-6 py-2 rounded-md bg-surface-bright text-on-surface shadow-[0_2px_4px_rgba(0,0,0,0.2)]">AM</button>
+<button class="px-6 py-2 rounded-md text-on-surface-variant hover:text-on-surface">PM</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Summary & Next) -->
+<div class="fixed bottom-0 left-0 w-full bg-[#1E1E1E] border-t border-[#2C2C2C] p-margin-mobile md:px-margin-desktop shadow-[0_-8px_32px_0_rgba(0,0,0,0.5)] z-50">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<!-- Summary -->
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="h-12 w-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_clock</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Selected Window</p>
+<p class="font-title-md text-title-md text-on-surface">Tomorrow, 10:30 AM</p>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full md:w-auto h-12 px-8 bg-primary-container text-on-primary-container font-title-md text-title-md rounded-lg flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors active:scale-95 duration-150 border-t border-[rgba(255,255,255,0.2)] shadow-[0_4px_12px_rgba(217,164,74,0.2)]">
+                Continue
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>
