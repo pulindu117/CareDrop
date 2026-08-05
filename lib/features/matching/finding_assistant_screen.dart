@@ -61,7 +61,7 @@ class _FindingAssistantScreenState extends State<FindingAssistantScreen> with Si
                 height: 120,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.primaryContainer.withOpacity(0.2),
+                  color: AppColors.primaryContainer.withValues(alpha: 0.2),
                   border: Border.all(color: AppColors.primary, width: 2),
                 ),
                 child: const Icon(

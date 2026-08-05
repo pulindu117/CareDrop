@@ -5,7 +5,7 @@ import '../../core/theme/app_text_styles.dart';
 import '../../core/routing/route_names.dart';
 import '../../widgets/caredrop_app_bar.dart';
 import '../../widgets/caredrop_button.dart';
-import '../../widgets/caredrop_text_field.dart';
+
 import '../../models/task_category.dart';
 
 class TaskDetailsScreen extends StatefulWidget {

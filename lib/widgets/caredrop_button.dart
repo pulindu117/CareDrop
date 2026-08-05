@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../theme/app_colors.dart';
-import '../theme/app_text_styles.dart';
+import '../core/theme/app_colors.dart';
+import '../core/theme/app_text_styles.dart';
 
 enum CareDropButtonVariant { primary, outlined, ghost }
 
@@ -63,7 +63,7 @@ class CareDropButton extends StatelessWidget {
                 right: 0,
                 height: 1,
                 child: Container(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                 ),
               ),
               Container(

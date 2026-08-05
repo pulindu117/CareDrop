@@ -29,7 +29,7 @@ class ConfirmCompletionScreen extends StatelessWidget {
                     border: Border.all(color: AppColors.primaryContainer, width: 2),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.primaryContainer.withOpacity(0.5),
+                        color: AppColors.primaryContainer.withValues(alpha: 0.5),
                         blurRadius: 24,
                       )
                     ],

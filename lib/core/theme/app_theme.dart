@@ -17,8 +17,7 @@ class AppTheme {
         onSecondary: AppColors.onSecondary,
         tertiary: AppColors.tertiary,
         tertiaryContainer: AppColors.tertiaryContainer,
-        background: AppColors.background,
-        onBackground: AppColors.onBackground,
+
         surface: AppColors.surface,
         onSurface: AppColors.onSurface,
         onSurfaceVariant: AppColors.onSurfaceVariant,
