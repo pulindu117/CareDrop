@@ -20,15 +20,17 @@ class OnboardingIntroScreen extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            height: MediaQuery.of(context).size.height * 0.65,
-            child: Container(
-              color: AppColors.surfaceContainerHigh,
-              child: const Center(
-                child: Icon(
-                  Icons.local_hospital,
-                  size: 100,
-                  color: AppColors.surfaceContainerHighest,
-                ),
+            height: MediaQuery.of(context).size.height * 0.55,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(40),
+                bottomRight: Radius.circular(40),
+              ),
+              child: Image.asset(
+                'assets/images/caredrop_onboarding.jpg',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -84,16 +86,6 @@ class OnboardingIntroScreen extends StatelessWidget {
                     text: 'Continue',
                     icon: Icons.arrow_forward,
                     onPressed: () => context.push(RouteNames.onboardingServices),
-                  ),
-                  const SizedBox(height: 16),
-                  Center(
-                    child: TextButton(
-                      onPressed: () => context.go(RouteNames.login),
-                      child: Text(
-                        'Skip',
-                        style: AppTextStyles.titleMd.copyWith(color: AppColors.primary),
-                      ),
-                    ),
                   ),
                 ],
               ),
