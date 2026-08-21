@@ -90,6 +90,20 @@ class OnboardingServicesScreen extends StatelessWidget {
               ),
             ),
           ),
+
+          // Top-left back button
+          Positioned(
+            top: MediaQuery.of(context).padding.top + 8,
+            left: 8,
+            child: IconButton(
+              icon: const Icon(Icons.arrow_back, color: AppColors.onSurfaceVariant),
+              onPressed: () {
+                if (context.canPop()) {
+                  context.pop();
+                }
+              },
+            ),
+          ),
         ],
       ),
     );
