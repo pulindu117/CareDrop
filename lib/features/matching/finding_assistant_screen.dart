@@ -35,7 +35,7 @@ class _FindingAssistantScreenState extends State<FindingAssistantScreen> with Si
     // Uses the mock RequestService to simulate finding an assistant
     await RequestService().findAssistantForRequest('mock_id');
     if (mounted) {
-      context.pushReplacement(RouteNames.assistantFound);
+      context.push(RouteNames.assistantFound);
     }
   }
 

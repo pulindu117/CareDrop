@@ -21,7 +21,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
     await Future.delayed(const Duration(seconds: 2));
     if (mounted) {
       setState(() => _isLoading = false);
-      context.go(RouteNames.profileSetup);
+      context.push(RouteNames.profileSetup);
     }
   }
 

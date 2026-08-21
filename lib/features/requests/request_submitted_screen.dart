@@ -39,7 +39,7 @@ class RequestSubmittedScreen extends StatelessWidget {
               const SizedBox(height: 48),
               CareDropButton(
                 text: 'View Status',
-                onPressed: () => context.go(RouteNames.findingAssistant),
+                onPressed: () => context.push(RouteNames.findingAssistant),
               ),
             ],
           ),

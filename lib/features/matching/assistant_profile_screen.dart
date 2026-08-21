@@ -131,7 +131,7 @@ class AssistantProfileScreen extends StatelessWidget {
           Container(
             width: 32,
             height: 32,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: AppColors.surfaceContainer,
               shape: BoxShape.circle,
             ),

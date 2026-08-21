@@ -126,7 +126,7 @@ class _AssistantFoundScreenState extends State<AssistantFoundScreen> {
               const Spacer(),
               CareDropButton(
                 text: 'Confirm Assistant',
-                onPressed: () => context.go(RouteNames.activeTracking),
+                onPressed: () => context.push(RouteNames.activeTracking),
               ),
               const SizedBox(height: 16),
               CareDropButton(

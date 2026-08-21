@@ -114,7 +114,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       style: AppTextStyles.bodyMd.copyWith(color: AppColors.onSurfaceVariant),
                     ),
                     GestureDetector(
-                      onTap: () => context.go(RouteNames.login),
+                      onTap: () {
+                        if (context.canPop()) {
+                          context.pop();
+                        } else {
+                          context.push(RouteNames.login);
+                        }
+                      },
                       child: Text(
                         'Log In',
                         style: AppTextStyles.titleMd.copyWith(color: AppColors.primary),
